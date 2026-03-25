@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Log Analyzer - SIDP</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1>🔍 Secure Data Intelligence Platform</h1>
+      <p class="subtitle">Paste your log content below to scan for sensitive data</p>
+    </header>
+
+    <main>
+      <div class="input-section">
+        <label for="logInput">Log Content</label>
+        <textarea id="logInput" rows="12" placeholder="Paste log content here..."></textarea>
+
+        <div class="file-row">
+          <input type="file" id="fileUpload" accept=".log,.txt" />
+          <span class="file-hint">or upload a .log / .txt file</span>
+        </div>
+
+        <button id="analyzeBtn" onclick="sendToBackend()">Analyze Logs</button>
+      </div>
+
+      <!-- results area, hidden at first -->
+      <div id="results" class="results-section" style="display:none;">
+        <div class="risk-box" id="riskBox">
+          <h2 id="riskLevel">Risk Level: --</h2>
+          <p id="riskScore">Score: --</p>
+        </div>
+
+        <div class="risk-legend">
+          <p><strong>Legend:</strong></p>
+          <div class="legend-item">
+            <span class="legend-badge risk-badge-critical">Critical</span>
+            <span class="legend-text">– severe issue</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-badge risk-badge-high">High</span>
+            <span class="legend-text">– important issue</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-badge risk-badge-medium">Medium</span>
+            <span class="legend-text">– moderate issue</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-badge risk-badge-low">Low</span>
+            <span class="legend-text">– minor issue</span>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <span id="totalLines">0</span>
+            <label>Lines Scanned</label>
+          </div>
+          <div class="stat-card">
+            <span id="totalFindings">0</span>
+            <label>Issues Found</label>
+          </div>
+        </div>
+
+        <div class="insights-box">
+          <h3>Insights</h3>
+          <ul id="insightsList"></ul>
+        </div>
+
+        <div class="findings-box">
+          <h3>Detailed Findings</h3>
+          <table id="findingsTable">
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Type</th>
+                <th>Match</th>
+                <th>Context</th>
+              </tr>
+            </thead>
+            <tbody id="findingsBody"></tbody>
+          </table>
+          <p id="noFindings" style="display:none;">No sensitive data found.</p>
+        </div>
+      </div>
+
+      <div id="errorMsg" class="error-msg" style="display:none;"></div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
