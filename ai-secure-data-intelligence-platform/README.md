@@ -103,4 +103,4 @@ AI-Secure-Data-Intelligence-Platform/
 
 ---
 
-Made by: [Your Name] | Submission: SISA Project
+Made by: Nitish Kumar | Submission: SISA Project
