@@ -1,0 +1,12 @@
+2024-03-01 09:12:44 INFO  App started on port 5000
+2024-03-01 09:13:02 INFO  User login attempt: user=john_doe
+2024-03-01 09:13:03 INFO  Auth passed for john.doe@gmail.com
+2024-03-01 09:13:10 DEBUG password=MySecret@123 stored in session
+2024-03-01 09:14:01 INFO  New signup: email=sara.khan@yahoo.com phone=9876543210
+2024-03-01 09:15:22 ERROR NullPointerException at line 87 in UserController.java
+2024-03-01 09:15:23 ERROR Traceback (most recent call last): File "app.py" line 42
+2024-03-01 09:16:05 DEBUG api_key=sk-a7f3b91cd22e4012abcdef123456 used for request
+2024-03-01 09:17:30 INFO  Payment processed for order #4421
+2024-03-01 09:18:44 WARN  Disk usage at 87%
+2024-03-01 09:19:01 ERROR Connection timeout after 30s
+2024-03-01 09:20:15 INFO  Logout: john.doe@gmail.com
